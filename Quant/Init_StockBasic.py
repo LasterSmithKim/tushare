@@ -10,9 +10,10 @@ if __name__ == '__main__':
     ts.set_token('*')
     pro = ts.pro_api()
     # 建立数据库连接,剔除已入库的部分
-    db = psycopg2.connect(database="tushare", user="tushare", password="*", host="192.168.43.226", port="5432")
+    db = psycopg2.connect(database="tushare", user="tushare", password="*", host="192.168.1.139", port="5432")
     cursor = db.cursor()
 
+    #上市状态： L上市 D退市 P暂停上市
     data = pro.query('stock_basic', exchange='', list_status='L', fields=
     'ts_code,symbol,name,area,industry,fullname,enname,market,exchange,curr_type,list_status,list_date,delist_date,is_hs')
     data = pd.DataFrame(data)

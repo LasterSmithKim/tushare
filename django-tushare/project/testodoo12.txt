@@ -1,0 +1,1723 @@
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#   * Rearrange models' order
+#   * Make sure each model has one field with primary_key=True
+#   * Make sure each ForeignKey has `on_delete` set to the desired behavior.
+#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or field names.
+from django.db import models
+
+
+class BaseImportImport(models.Model):
+    res_model = models.CharField(max_length=-1, blank=True, null=True)
+    file = models.BinaryField(blank=True, null=True)
+    file_name = models.CharField(max_length=-1, blank=True, null=True)
+    file_type = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_import'
+
+
+class BaseImportMapping(models.Model):
+    res_model = models.CharField(max_length=-1, blank=True, null=True)
+    column_name = models.CharField(max_length=-1, blank=True, null=True)
+    field_name = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_mapping'
+
+
+class BaseImportTestsModelsChar(models.Model):
+    value = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_char'
+
+
+class BaseImportTestsModelsCharNoreadonly(models.Model):
+    value = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_char_noreadonly'
+
+
+class BaseImportTestsModelsCharReadonly(models.Model):
+    value = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_char_readonly'
+
+
+class BaseImportTestsModelsCharRequired(models.Model):
+    value = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_char_required'
+
+
+class BaseImportTestsModelsCharStates(models.Model):
+    value = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_char_states'
+
+
+class BaseImportTestsModelsCharStillreadonly(models.Model):
+    value = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_char_stillreadonly'
+
+
+class BaseImportTestsModelsComplex(models.Model):
+    f = models.FloatField(blank=True, null=True)
+    m = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    c = models.CharField(max_length=-1, blank=True, null=True)
+    currency = models.ForeignKey('ResCurrency', models.DO_NOTHING, blank=True, null=True)
+    d = models.DateField(blank=True, null=True)
+    dt = models.DateTimeField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_complex'
+
+
+class BaseImportTestsModelsFloat(models.Model):
+    value = models.FloatField(blank=True, null=True)
+    value2 = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    currency = models.ForeignKey('ResCurrency', models.DO_NOTHING, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_float'
+
+
+class BaseImportTestsModelsM2O(models.Model):
+    value = models.ForeignKey('BaseImportTestsModelsM2ORelated', models.DO_NOTHING, db_column='value', blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_m2o'
+
+
+class BaseImportTestsModelsM2ORelated(models.Model):
+    value = models.IntegerField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_m2o_related'
+
+
+class BaseImportTestsModelsM2ORequired(models.Model):
+    value = models.ForeignKey('BaseImportTestsModelsM2ORequiredRelated', models.DO_NOTHING, db_column='value')
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_m2o_required'
+
+
+class BaseImportTestsModelsM2ORequiredRelated(models.Model):
+    value = models.IntegerField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_m2o_required_related'
+
+
+class BaseImportTestsModelsO2M(models.Model):
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_o2m'
+
+
+class BaseImportTestsModelsO2MChild(models.Model):
+    parent = models.ForeignKey(BaseImportTestsModelsO2M, models.DO_NOTHING, blank=True, null=True)
+    value = models.IntegerField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_o2m_child'
+
+
+class BaseImportTestsModelsPreview(models.Model):
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    somevalue = models.IntegerField()
+    othervalue = models.IntegerField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_import_tests_models_preview'
+
+
+class BaseLanguageExport(models.Model):
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    lang = models.CharField(max_length=-1)
+    format = models.CharField(max_length=-1)
+    data = models.BinaryField(blank=True, null=True)
+    state = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_language_export'
+
+
+class BaseLanguageImport(models.Model):
+    name = models.CharField(max_length=-1)
+    code = models.CharField(max_length=6)
+    data = models.BinaryField()
+    filename = models.CharField(max_length=-1)
+    overwrite = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_language_import'
+
+
+class BaseLanguageInstall(models.Model):
+    lang = models.CharField(max_length=-1)
+    overwrite = models.BooleanField(blank=True, null=True)
+    state = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_language_install'
+
+
+class BaseModuleUninstall(models.Model):
+    show_all = models.BooleanField(blank=True, null=True)
+    module = models.ForeignKey('IrModuleModule', models.DO_NOTHING)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_module_uninstall'
+
+
+class BaseModuleUpdate(models.Model):
+    updated = models.IntegerField(blank=True, null=True)
+    added = models.IntegerField(blank=True, null=True)
+    state = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_module_update'
+
+
+class BaseModuleUpgrade(models.Model):
+    module_info = models.TextField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_module_upgrade'
+
+
+class BasePartnerMergeAutomaticWizard(models.Model):
+    group_by_email = models.BooleanField(blank=True, null=True)
+    group_by_name = models.BooleanField(blank=True, null=True)
+    group_by_is_company = models.BooleanField(blank=True, null=True)
+    group_by_vat = models.BooleanField(blank=True, null=True)
+    group_by_parent_id = models.BooleanField(blank=True, null=True)
+    state = models.CharField(max_length=-1)
+    number_group = models.IntegerField(blank=True, null=True)
+    current_line = models.ForeignKey('BasePartnerMergeLine', models.DO_NOTHING, blank=True, null=True)
+    dst_partner = models.ForeignKey('ResPartner', models.DO_NOTHING, blank=True, null=True)
+    exclude_contact = models.BooleanField(blank=True, null=True)
+    exclude_journal_item = models.BooleanField(blank=True, null=True)
+    maximum_group = models.IntegerField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_partner_merge_automatic_wizard'
+
+
+class BasePartnerMergeAutomaticWizardResPartnerRel(models.Model):
+    base_partner_merge_automatic_wizard = models.ForeignKey(BasePartnerMergeAutomaticWizard, models.DO_NOTHING)
+    res_partner = models.ForeignKey('ResPartner', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'base_partner_merge_automatic_wizard_res_partner_rel'
+        unique_together = (('base_partner_merge_automatic_wizard', 'res_partner'),)
+
+
+class BasePartnerMergeLine(models.Model):
+    wizard = models.ForeignKey(BasePartnerMergeAutomaticWizard, models.DO_NOTHING, blank=True, null=True)
+    min_id = models.IntegerField(blank=True, null=True)
+    aggr_ids = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_partner_merge_line'
+
+
+class BaseUpdateTranslations(models.Model):
+    lang = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'base_update_translations'
+
+
+class ChangePasswordUser(models.Model):
+    wizard = models.ForeignKey('ChangePasswordWizard', models.DO_NOTHING)
+    user = models.ForeignKey('ResUsers', models.DO_NOTHING)
+    user_login = models.CharField(max_length=-1, blank=True, null=True)
+    new_passwd = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'change_password_user'
+
+
+class ChangePasswordWizard(models.Model):
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'change_password_wizard'
+
+
+class IapAccount(models.Model):
+    service_name = models.CharField(max_length=-1, blank=True, null=True)
+    account_token = models.CharField(max_length=-1, blank=True, null=True)
+    company = models.ForeignKey('ResCompany', models.DO_NOTHING, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'iap_account'
+
+
+class IrActClient(models.Model):
+    name = models.CharField(max_length=-1)
+    type = models.CharField(max_length=-1)
+    help = models.TextField(blank=True, null=True)
+    binding_model = models.ForeignKey('IrModel', models.DO_NOTHING, blank=True, null=True)
+    binding_type = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+    tag = models.CharField(max_length=-1)
+    target = models.CharField(max_length=-1, blank=True, null=True)
+    res_model = models.CharField(max_length=-1, blank=True, null=True)
+    context = models.CharField(max_length=-1)
+    params_store = models.BinaryField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_act_client'
+
+
+class IrActReportXml(models.Model):
+    name = models.CharField(max_length=-1)
+    type = models.CharField(max_length=-1)
+    help = models.TextField(blank=True, null=True)
+    binding_model = models.ForeignKey('IrModel', models.DO_NOTHING, blank=True, null=True)
+    binding_type = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+    model = models.CharField(max_length=-1)
+    report_type = models.CharField(max_length=-1)
+    report_name = models.CharField(max_length=-1)
+    report_file = models.CharField(max_length=-1, blank=True, null=True)
+    multi = models.BooleanField(blank=True, null=True)
+    paperformat = models.ForeignKey('ReportPaperformat', models.DO_NOTHING, blank=True, null=True)
+    print_report_name = models.CharField(max_length=-1, blank=True, null=True)
+    attachment_use = models.BooleanField(blank=True, null=True)
+    attachment = models.CharField(max_length=-1, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_act_report_xml'
+
+
+class IrActServer(models.Model):
+    name = models.CharField(max_length=-1)
+    type = models.CharField(max_length=-1)
+    help = models.TextField(blank=True, null=True)
+    binding_model = models.ForeignKey('IrModel', models.DO_NOTHING, blank=True, null=True)
+    binding_type = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+    usage = models.CharField(max_length=-1)
+    state = models.CharField(max_length=-1)
+    sequence = models.IntegerField(blank=True, null=True)
+    model = models.ForeignKey('IrModel', models.DO_NOTHING)
+    model_name = models.CharField(max_length=-1, blank=True, null=True)
+    code = models.TextField(blank=True, null=True)
+    crud_model = models.ForeignKey('IrModel', models.DO_NOTHING, blank=True, null=True)
+    link_field = models.ForeignKey('IrModelFields', models.DO_NOTHING, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_act_server'
+
+
+class IrActUrl(models.Model):
+    name = models.CharField(max_length=-1)
+    type = models.CharField(max_length=-1)
+    help = models.TextField(blank=True, null=True)
+    binding_model = models.ForeignKey('IrModel', models.DO_NOTHING, blank=True, null=True)
+    binding_type = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+    url = models.TextField()
+    target = models.CharField(max_length=-1)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_act_url'
+
+
+class IrActWindow(models.Model):
+    name = models.CharField(max_length=-1)
+    type = models.CharField(max_length=-1)
+    help = models.TextField(blank=True, null=True)
+    binding_model = models.ForeignKey('IrModel', models.DO_NOTHING, blank=True, null=True)
+    binding_type = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+    view = models.ForeignKey('IrUiView', models.DO_NOTHING, blank=True, null=True)
+    domain = models.CharField(max_length=-1, blank=True, null=True)
+    context = models.CharField(max_length=-1)
+    res_id = models.IntegerField(blank=True, null=True)
+    res_model = models.CharField(max_length=-1)
+    src_model = models.CharField(max_length=-1, blank=True, null=True)
+    target = models.CharField(max_length=-1, blank=True, null=True)
+    view_mode = models.CharField(max_length=-1)
+    view_type = models.CharField(max_length=-1)
+    usage = models.CharField(max_length=-1, blank=True, null=True)
+    limit = models.IntegerField(blank=True, null=True)
+    search_view = models.ForeignKey('IrUiView', models.DO_NOTHING, blank=True, null=True)
+    filter = models.BooleanField(blank=True, null=True)
+    auto_search = models.BooleanField(blank=True, null=True)
+    multi = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_act_window'
+
+
+class IrActWindowGroupRel(models.Model):
+    act = models.ForeignKey(IrActWindow, models.DO_NOTHING)
+    gid = models.ForeignKey('ResGroups', models.DO_NOTHING, db_column='gid')
+
+    class Meta:
+        managed = False
+        db_table = 'ir_act_window_group_rel'
+        unique_together = (('act', 'gid'),)
+
+
+class IrActWindowView(models.Model):
+    sequence = models.IntegerField(blank=True, null=True)
+    view = models.ForeignKey('IrUiView', models.DO_NOTHING, blank=True, null=True)
+    view_mode = models.CharField(max_length=-1)
+    act_window = models.ForeignKey(IrActWindow, models.DO_NOTHING, blank=True, null=True)
+    multi = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_act_window_view'
+        unique_together = (('act_window', 'view_mode'),)
+
+
+class IrActions(models.Model):
+    name = models.CharField(max_length=-1)
+    type = models.CharField(max_length=-1)
+    help = models.TextField(blank=True, null=True)
+    binding_model = models.ForeignKey('IrModel', models.DO_NOTHING, blank=True, null=True)
+    binding_type = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_actions'
+
+
+class IrActionsTodo(models.Model):
+    action_id = models.IntegerField()
+    sequence = models.IntegerField(blank=True, null=True)
+    state = models.CharField(max_length=-1)
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_actions_todo'
+
+
+class IrAttachment(models.Model):
+    name = models.CharField(max_length=-1)
+    datas_fname = models.CharField(max_length=-1, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    res_name = models.CharField(max_length=-1, blank=True, null=True)
+    res_model = models.CharField(max_length=-1, blank=True, null=True)
+    res_model_name = models.CharField(max_length=-1, blank=True, null=True)
+    res_field = models.CharField(max_length=-1, blank=True, null=True)
+    res_id = models.IntegerField(blank=True, null=True)
+    company = models.ForeignKey('ResCompany', models.DO_NOTHING, blank=True, null=True)
+    type = models.CharField(max_length=-1)
+    url = models.CharField(max_length=1024, blank=True, null=True)
+    public = models.BooleanField(blank=True, null=True)
+    access_token = models.CharField(max_length=-1, blank=True, null=True)
+    db_datas = models.BinaryField(blank=True, null=True)
+    store_fname = models.CharField(max_length=-1, blank=True, null=True)
+    file_size = models.IntegerField(blank=True, null=True)
+    checksum = models.CharField(max_length=40, blank=True, null=True)
+    mimetype = models.CharField(max_length=-1, blank=True, null=True)
+    index_content = models.TextField(blank=True, null=True)
+    active = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_attachment'
+
+
+class IrConfigParameter(models.Model):
+    key = models.CharField(unique=True, max_length=-1)
+    value = models.TextField()
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_config_parameter'
+
+
+class IrCron(models.Model):
+    ir_actions_server = models.ForeignKey(IrActServer, models.DO_NOTHING)
+    cron_name = models.CharField(max_length=-1, blank=True, null=True)
+    user = models.ForeignKey('ResUsers', models.DO_NOTHING)
+    active = models.BooleanField(blank=True, null=True)
+    interval_number = models.IntegerField(blank=True, null=True)
+    interval_type = models.CharField(max_length=-1, blank=True, null=True)
+    numbercall = models.IntegerField(blank=True, null=True)
+    doall = models.BooleanField(blank=True, null=True)
+    nextcall = models.DateTimeField()
+    priority = models.IntegerField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_cron'
+
+
+class IrDefault(models.Model):
+    field = models.ForeignKey('IrModelFields', models.DO_NOTHING)
+    user = models.ForeignKey('ResUsers', models.DO_NOTHING, blank=True, null=True)
+    company = models.ForeignKey('ResCompany', models.DO_NOTHING, blank=True, null=True)
+    condition = models.CharField(max_length=-1, blank=True, null=True)
+    json_value = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_default'
+
+
+class IrDemo(models.Model):
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_demo'
+
+
+class IrDemoFailure(models.Model):
+    module = models.ForeignKey('IrModuleModule', models.DO_NOTHING)
+    error = models.CharField(max_length=-1, blank=True, null=True)
+    wizard = models.ForeignKey('IrDemoFailureWizard', models.DO_NOTHING, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_demo_failure'
+
+
+class IrDemoFailureWizard(models.Model):
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_demo_failure_wizard'
+
+
+class IrExports(models.Model):
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    resource = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_exports'
+
+
+class IrExportsLine(models.Model):
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    export = models.ForeignKey(IrExports, models.DO_NOTHING, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_exports_line'
+
+
+class IrFilters(models.Model):
+    name = models.CharField(max_length=-1)
+    user = models.ForeignKey('ResUsers', models.DO_NOTHING, blank=True, null=True)
+    domain = models.TextField()
+    context = models.TextField()
+    sort = models.TextField()
+    model_id = models.CharField(max_length=-1)
+    is_default = models.BooleanField(blank=True, null=True)
+    action_id = models.IntegerField(blank=True, null=True)
+    active = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    # A unique constraint could not be introspected.
+    class Meta:
+        managed = False
+        db_table = 'ir_filters'
+        unique_together = (('name', 'model_id', 'user', 'action_id'),)
+
+
+class IrLogging(models.Model):
+    create_uid = models.IntegerField(blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.IntegerField(blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+    name = models.CharField(max_length=-1)
+    type = models.CharField(max_length=-1)
+    dbname = models.CharField(max_length=-1, blank=True, null=True)
+    level = models.CharField(max_length=-1, blank=True, null=True)
+    message = models.TextField()
+    path = models.CharField(max_length=-1)
+    func = models.CharField(max_length=-1)
+    line = models.CharField(max_length=-1)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_logging'
+
+
+class IrMailServer(models.Model):
+    name = models.CharField(max_length=-1)
+    smtp_host = models.CharField(max_length=-1)
+    smtp_port = models.IntegerField()
+    smtp_user = models.CharField(max_length=-1, blank=True, null=True)
+    smtp_pass = models.CharField(max_length=-1, blank=True, null=True)
+    smtp_encryption = models.CharField(max_length=-1)
+    smtp_debug = models.BooleanField(blank=True, null=True)
+    sequence = models.IntegerField(blank=True, null=True)
+    active = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_mail_server'
+
+
+class IrModel(models.Model):
+    name = models.CharField(max_length=-1)
+    model = models.CharField(unique=True, max_length=-1)
+    info = models.TextField(blank=True, null=True)
+    state = models.CharField(max_length=-1, blank=True, null=True)
+    transient = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_model'
+
+
+class IrModelAccess(models.Model):
+    name = models.CharField(max_length=-1)
+    active = models.BooleanField(blank=True, null=True)
+    model = models.ForeignKey(IrModel, models.DO_NOTHING)
+    group = models.ForeignKey('ResGroups', models.DO_NOTHING, blank=True, null=True)
+    perm_read = models.BooleanField(blank=True, null=True)
+    perm_write = models.BooleanField(blank=True, null=True)
+    perm_create = models.BooleanField(blank=True, null=True)
+    perm_unlink = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_model_access'
+
+
+class IrModelConstraint(models.Model):
+    name = models.CharField(max_length=-1)
+    definition = models.CharField(max_length=-1, blank=True, null=True)
+    model = models.ForeignKey(IrModel, models.DO_NOTHING, db_column='model')
+    module = models.ForeignKey('IrModuleModule', models.DO_NOTHING, db_column='module')
+    type = models.CharField(max_length=1)
+    date_update = models.DateTimeField(blank=True, null=True)
+    date_init = models.DateTimeField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_model_constraint'
+        unique_together = (('name', 'module'),)
+
+
+class IrModelData(models.Model):
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    noupdate = models.BooleanField(blank=True, null=True)
+    name = models.CharField(max_length=-1)
+    date_init = models.DateTimeField(blank=True, null=True)
+    date_update = models.DateTimeField(blank=True, null=True)
+    module = models.CharField(max_length=-1)
+    model = models.CharField(max_length=-1)
+    res_id = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_model_data'
+        unique_together = (('module', 'name'),)
+
+
+class IrModelFields(models.Model):
+    name = models.CharField(max_length=-1)
+    complete_name = models.CharField(max_length=-1, blank=True, null=True)
+    model = models.CharField(max_length=-1)
+    relation = models.CharField(max_length=-1, blank=True, null=True)
+    relation_field = models.CharField(max_length=-1, blank=True, null=True)
+    relation_field_0 = models.ForeignKey('self', models.DO_NOTHING, db_column='relation_field_id', blank=True, null=True)  # Field renamed because of name conflict.
+    model_0 = models.ForeignKey(IrModel, models.DO_NOTHING, db_column='model_id')  # Field renamed because of name conflict.
+    field_description = models.CharField(max_length=-1)
+    help = models.TextField(blank=True, null=True)
+    ttype = models.CharField(max_length=-1)
+    selection = models.CharField(max_length=-1, blank=True, null=True)
+    copied = models.BooleanField(blank=True, null=True)
+    related = models.CharField(max_length=-1, blank=True, null=True)
+    related_field = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    required = models.BooleanField(blank=True, null=True)
+    readonly = models.BooleanField(blank=True, null=True)
+    index = models.BooleanField(blank=True, null=True)
+    translate = models.BooleanField(blank=True, null=True)
+    size = models.IntegerField(blank=True, null=True)
+    state = models.CharField(max_length=-1)
+    on_delete = models.CharField(max_length=-1, blank=True, null=True)
+    domain = models.CharField(max_length=-1, blank=True, null=True)
+    selectable = models.BooleanField(blank=True, null=True)
+    relation_table = models.CharField(max_length=-1, blank=True, null=True)
+    column1 = models.CharField(max_length=-1, blank=True, null=True)
+    column2 = models.CharField(max_length=-1, blank=True, null=True)
+    compute = models.TextField(blank=True, null=True)
+    depends = models.CharField(max_length=-1, blank=True, null=True)
+    store = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_model_fields'
+        unique_together = (('model', 'name'),)
+
+
+class IrModelFieldsGroupRel(models.Model):
+    field = models.ForeignKey(IrModelFields, models.DO_NOTHING)
+    group = models.ForeignKey('ResGroups', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_model_fields_group_rel'
+        unique_together = (('field', 'group'),)
+
+
+class IrModelRelation(models.Model):
+    name = models.CharField(max_length=-1)
+    model = models.ForeignKey(IrModel, models.DO_NOTHING, db_column='model')
+    module = models.ForeignKey('IrModuleModule', models.DO_NOTHING, db_column='module')
+    date_update = models.DateTimeField(blank=True, null=True)
+    date_init = models.DateTimeField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_model_relation'
+
+
+class IrModuleCategory(models.Model):
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    name = models.CharField(max_length=-1)
+    description = models.TextField(blank=True, null=True)
+    sequence = models.IntegerField(blank=True, null=True)
+    visible = models.BooleanField(blank=True, null=True)
+    exclusive = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_module_category'
+
+
+class IrModuleModule(models.Model):
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    website = models.CharField(max_length=-1, blank=True, null=True)
+    summary = models.CharField(max_length=-1, blank=True, null=True)
+    name = models.CharField(unique=True, max_length=-1)
+    author = models.CharField(max_length=-1, blank=True, null=True)
+    icon = models.CharField(max_length=-1, blank=True, null=True)
+    state = models.CharField(max_length=16, blank=True, null=True)
+    latest_version = models.CharField(max_length=-1, blank=True, null=True)
+    shortdesc = models.CharField(max_length=-1, blank=True, null=True)
+    category = models.ForeignKey(IrModuleCategory, models.DO_NOTHING, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    application = models.BooleanField(blank=True, null=True)
+    demo = models.BooleanField(blank=True, null=True)
+    web = models.BooleanField(blank=True, null=True)
+    license = models.CharField(max_length=32, blank=True, null=True)
+    sequence = models.IntegerField(blank=True, null=True)
+    auto_install = models.BooleanField(blank=True, null=True)
+    to_buy = models.BooleanField(blank=True, null=True)
+    maintainer = models.CharField(max_length=-1, blank=True, null=True)
+    contributors = models.TextField(blank=True, null=True)
+    published_version = models.CharField(max_length=-1, blank=True, null=True)
+    url = models.CharField(max_length=-1, blank=True, null=True)
+    menus_by_module = models.TextField(blank=True, null=True)
+    reports_by_module = models.TextField(blank=True, null=True)
+    views_by_module = models.TextField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_module_module'
+
+
+class IrModuleModuleDependency(models.Model):
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    module = models.ForeignKey(IrModuleModule, models.DO_NOTHING, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_module_module_dependency'
+
+
+class IrModuleModuleExclusion(models.Model):
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    module = models.ForeignKey(IrModuleModule, models.DO_NOTHING, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_module_module_exclusion'
+
+
+class IrProperty(models.Model):
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    res_id = models.CharField(max_length=-1, blank=True, null=True)
+    company = models.ForeignKey('ResCompany', models.DO_NOTHING, blank=True, null=True)
+    fields = models.ForeignKey(IrModelFields, models.DO_NOTHING)
+    value_float = models.FloatField(blank=True, null=True)
+    value_integer = models.IntegerField(blank=True, null=True)
+    value_text = models.TextField(blank=True, null=True)
+    value_binary = models.BinaryField(blank=True, null=True)
+    value_reference = models.CharField(max_length=-1, blank=True, null=True)
+    value_datetime = models.DateTimeField(blank=True, null=True)
+    type = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_property'
+
+
+class IrRule(models.Model):
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    active = models.BooleanField(blank=True, null=True)
+    model = models.ForeignKey(IrModel, models.DO_NOTHING)
+    domain_force = models.TextField(blank=True, null=True)
+    perm_read = models.BooleanField(blank=True, null=True)
+    perm_write = models.BooleanField(blank=True, null=True)
+    perm_create = models.BooleanField(blank=True, null=True)
+    perm_unlink = models.BooleanField(blank=True, null=True)
+    global_field = models.BooleanField(db_column='global', blank=True, null=True)  # Field renamed because it was a Python reserved word.
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_rule'
+
+
+class IrSequence(models.Model):
+    name = models.CharField(max_length=-1)
+    code = models.CharField(max_length=-1, blank=True, null=True)
+    implementation = models.CharField(max_length=-1)
+    active = models.BooleanField(blank=True, null=True)
+    prefix = models.CharField(max_length=-1, blank=True, null=True)
+    suffix = models.CharField(max_length=-1, blank=True, null=True)
+    number_next = models.IntegerField()
+    number_increment = models.IntegerField()
+    padding = models.IntegerField()
+    company = models.ForeignKey('ResCompany', models.DO_NOTHING, blank=True, null=True)
+    use_date_range = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_sequence'
+
+
+class IrSequenceDateRange(models.Model):
+    date_from = models.DateField()
+    date_to = models.DateField()
+    sequence = models.ForeignKey(IrSequence, models.DO_NOTHING)
+    number_next = models.IntegerField()
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_sequence_date_range'
+
+
+class IrServerObjectLines(models.Model):
+    server = models.ForeignKey(IrActServer, models.DO_NOTHING, blank=True, null=True)
+    col1 = models.ForeignKey(IrModelFields, models.DO_NOTHING, db_column='col1')
+    value = models.TextField()
+    type = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_server_object_lines'
+
+
+class IrTranslation(models.Model):
+    name = models.CharField(max_length=-1)
+    res_id = models.IntegerField(blank=True, null=True)
+    lang = models.ForeignKey('ResLang', models.DO_NOTHING, db_column='lang', blank=True, null=True)
+    type = models.CharField(max_length=-1, blank=True, null=True)
+    src = models.TextField(blank=True, null=True)
+    value = models.TextField(blank=True, null=True)
+    module = models.CharField(max_length=-1, blank=True, null=True)
+    state = models.CharField(max_length=-1, blank=True, null=True)
+    comments = models.TextField(blank=True, null=True)
+
+    # A unique constraint could not be introspected.
+    class Meta:
+        managed = False
+        db_table = 'ir_translation'
+        unique_together = (('type', 'lang'), ('type', 'lang', 'name', 'res_id'), ('type', 'lang', 'name'), ('type', 'name', 'lang', 'res_id'),)
+
+
+class IrUiMenu(models.Model):
+    parent_path = models.CharField(max_length=-1, blank=True, null=True)
+    name = models.CharField(max_length=-1)
+    active = models.BooleanField(blank=True, null=True)
+    sequence = models.IntegerField(blank=True, null=True)
+    parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    web_icon = models.CharField(max_length=-1, blank=True, null=True)
+    action = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_ui_menu'
+
+
+class IrUiMenuGroupRel(models.Model):
+    menu = models.ForeignKey(IrUiMenu, models.DO_NOTHING)
+    gid = models.ForeignKey('ResGroups', models.DO_NOTHING, db_column='gid')
+
+    class Meta:
+        managed = False
+        db_table = 'ir_ui_menu_group_rel'
+        unique_together = (('menu', 'gid'),)
+
+
+class IrUiView(models.Model):
+    name = models.CharField(max_length=-1)
+    model = models.CharField(max_length=-1, blank=True, null=True)
+    key = models.CharField(max_length=-1, blank=True, null=True)
+    priority = models.IntegerField()
+    type = models.CharField(max_length=-1, blank=True, null=True)
+    arch_db = models.TextField(blank=True, null=True)
+    arch_fs = models.CharField(max_length=-1, blank=True, null=True)
+    inherit = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    field_parent = models.CharField(max_length=-1, blank=True, null=True)
+    mode = models.CharField(max_length=-1)
+    active = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_ui_view'
+
+
+class IrUiViewCustom(models.Model):
+    ref = models.ForeignKey(IrUiView, models.DO_NOTHING)
+    user = models.ForeignKey('ResUsers', models.DO_NOTHING)
+    arch = models.TextField()
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_ui_view_custom'
+
+
+class IrUiViewGroupRel(models.Model):
+    view = models.ForeignKey(IrUiView, models.DO_NOTHING)
+    group = models.ForeignKey('ResGroups', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'ir_ui_view_group_rel'
+        unique_together = (('view', 'group'),)
+
+
+class RelModulesLangexport(models.Model):
+    wiz = models.ForeignKey(BaseLanguageExport, models.DO_NOTHING)
+    module = models.ForeignKey(IrModuleModule, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'rel_modules_langexport'
+        unique_together = (('wiz', 'module'),)
+
+
+class RelServerActions(models.Model):
+    server = models.ForeignKey(IrActServer, models.DO_NOTHING)
+    action = models.ForeignKey(IrActServer, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'rel_server_actions'
+        unique_together = (('server', 'action'),)
+
+
+class ReportLayout(models.Model):
+    view = models.ForeignKey(IrUiView, models.DO_NOTHING)
+    image = models.CharField(max_length=-1, blank=True, null=True)
+    pdf = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'report_layout'
+
+
+class ReportPaperformat(models.Model):
+    name = models.CharField(max_length=-1)
+    default = models.BooleanField(blank=True, null=True)
+    format = models.CharField(max_length=-1, blank=True, null=True)
+    margin_top = models.FloatField(blank=True, null=True)
+    margin_bottom = models.FloatField(blank=True, null=True)
+    margin_left = models.FloatField(blank=True, null=True)
+    margin_right = models.FloatField(blank=True, null=True)
+    page_height = models.IntegerField(blank=True, null=True)
+    page_width = models.IntegerField(blank=True, null=True)
+    orientation = models.CharField(max_length=-1, blank=True, null=True)
+    header_line = models.BooleanField(blank=True, null=True)
+    header_spacing = models.IntegerField(blank=True, null=True)
+    dpi = models.IntegerField()
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'report_paperformat'
+
+
+class ResBank(models.Model):
+    name = models.CharField(max_length=-1)
+    street = models.CharField(max_length=-1, blank=True, null=True)
+    street2 = models.CharField(max_length=-1, blank=True, null=True)
+    zip = models.CharField(max_length=-1, blank=True, null=True)
+    city = models.CharField(max_length=-1, blank=True, null=True)
+    state = models.ForeignKey('ResCountryState', models.DO_NOTHING, db_column='state', blank=True, null=True)
+    country = models.ForeignKey('ResCountry', models.DO_NOTHING, db_column='country', blank=True, null=True)
+    email = models.CharField(max_length=-1, blank=True, null=True)
+    phone = models.CharField(max_length=-1, blank=True, null=True)
+    active = models.BooleanField(blank=True, null=True)
+    bic = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_bank'
+
+
+class ResCompany(models.Model):
+    name = models.CharField(unique=True, max_length=-1)
+    partner = models.ForeignKey('ResPartner', models.DO_NOTHING)
+    currency = models.ForeignKey('ResCurrency', models.DO_NOTHING)
+    sequence = models.IntegerField(blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    report_header = models.TextField(blank=True, null=True)
+    report_footer = models.TextField(blank=True, null=True)
+    logo_web = models.BinaryField(blank=True, null=True)
+    account_no = models.CharField(max_length=-1, blank=True, null=True)
+    email = models.CharField(max_length=-1, blank=True, null=True)
+    phone = models.CharField(max_length=-1, blank=True, null=True)
+    company_registry = models.CharField(max_length=-1, blank=True, null=True)
+    paperformat = models.ForeignKey(ReportPaperformat, models.DO_NOTHING, blank=True, null=True)
+    external_report_layout = models.ForeignKey(IrUiView, models.DO_NOTHING, blank=True, null=True)
+    base_onboarding_company_state = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_company'
+
+
+class ResCompanyUsersRel(models.Model):
+    cid = models.ForeignKey(ResCompany, models.DO_NOTHING, db_column='cid')
+    user = models.ForeignKey('ResUsers', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'res_company_users_rel'
+        unique_together = (('cid', 'user'),)
+
+
+class ResConfig(models.Model):
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_config'
+
+
+class ResConfigInstaller(models.Model):
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_config_installer'
+
+
+class ResConfigSettings(models.Model):
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_config_settings'
+
+
+class ResCountry(models.Model):
+    name = models.CharField(unique=True, max_length=-1)
+    code = models.CharField(unique=True, max_length=2, blank=True, null=True)
+    address_format = models.TextField(blank=True, null=True)
+    address_view = models.ForeignKey(IrUiView, models.DO_NOTHING, blank=True, null=True)
+    currency = models.ForeignKey('ResCurrency', models.DO_NOTHING, blank=True, null=True)
+    phone_code = models.IntegerField(blank=True, null=True)
+    name_position = models.CharField(max_length=-1, blank=True, null=True)
+    vat_label = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_country'
+
+
+class ResCountryGroup(models.Model):
+    name = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_country_group'
+
+
+class ResCountryResCountryGroupRel(models.Model):
+    res_country = models.ForeignKey(ResCountry, models.DO_NOTHING)
+    res_country_group = models.ForeignKey(ResCountryGroup, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'res_country_res_country_group_rel'
+        unique_together = (('res_country', 'res_country_group'),)
+
+
+class ResCountryState(models.Model):
+    country = models.ForeignKey(ResCountry, models.DO_NOTHING)
+    name = models.CharField(max_length=-1)
+    code = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_country_state'
+        unique_together = (('country', 'code'),)
+
+
+class ResCurrency(models.Model):
+    name = models.CharField(unique=True, max_length=-1)
+    symbol = models.CharField(max_length=-1)
+    rounding = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    decimal_places = models.IntegerField(blank=True, null=True)
+    active = models.BooleanField(blank=True, null=True)
+    position = models.CharField(max_length=-1, blank=True, null=True)
+    currency_unit_label = models.CharField(max_length=-1, blank=True, null=True)
+    currency_subunit_label = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_currency'
+
+
+class ResCurrencyRate(models.Model):
+    name = models.DateField()
+    rate = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    currency = models.ForeignKey(ResCurrency, models.DO_NOTHING, blank=True, null=True)
+    company = models.ForeignKey(ResCompany, models.DO_NOTHING, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_currency_rate'
+        unique_together = (('name', 'currency', 'company'),)
+
+
+class ResGroups(models.Model):
+    name = models.CharField(max_length=-1)
+    comment = models.TextField(blank=True, null=True)
+    category = models.ForeignKey(IrModuleCategory, models.DO_NOTHING, blank=True, null=True)
+    color = models.IntegerField(blank=True, null=True)
+    share = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_groups'
+        unique_together = (('category', 'name'),)
+
+
+class ResGroupsImpliedRel(models.Model):
+    gid = models.ForeignKey(ResGroups, models.DO_NOTHING, db_column='gid')
+    hid = models.ForeignKey(ResGroups, models.DO_NOTHING, db_column='hid')
+
+    class Meta:
+        managed = False
+        db_table = 'res_groups_implied_rel'
+        unique_together = (('gid', 'hid'),)
+
+
+class ResGroupsReportRel(models.Model):
+    uid = models.ForeignKey(IrActReportXml, models.DO_NOTHING, db_column='uid')
+    gid = models.ForeignKey(ResGroups, models.DO_NOTHING, db_column='gid')
+
+    class Meta:
+        managed = False
+        db_table = 'res_groups_report_rel'
+        unique_together = (('uid', 'gid'),)
+
+
+class ResGroupsUsersRel(models.Model):
+    gid = models.ForeignKey(ResGroups, models.DO_NOTHING, db_column='gid')
+    uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='uid')
+
+    class Meta:
+        managed = False
+        db_table = 'res_groups_users_rel'
+        unique_together = (('gid', 'uid'),)
+
+
+class ResLang(models.Model):
+    name = models.CharField(unique=True, max_length=-1)
+    code = models.CharField(unique=True, max_length=-1)
+    iso_code = models.CharField(max_length=-1, blank=True, null=True)
+    translatable = models.BooleanField(blank=True, null=True)
+    active = models.BooleanField(blank=True, null=True)
+    direction = models.CharField(max_length=-1)
+    date_format = models.CharField(max_length=-1)
+    time_format = models.CharField(max_length=-1)
+    week_start = models.IntegerField()
+    grouping = models.CharField(max_length=-1)
+    decimal_point = models.CharField(max_length=-1)
+    thousands_sep = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_lang'
+
+
+class ResPartner(models.Model):
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    company = models.ForeignKey(ResCompany, models.DO_NOTHING, blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    display_name = models.CharField(max_length=-1, blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
+    title = models.ForeignKey('ResPartnerTitle', models.DO_NOTHING, db_column='title', blank=True, null=True)
+    parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    ref = models.CharField(max_length=-1, blank=True, null=True)
+    lang = models.CharField(max_length=-1, blank=True, null=True)
+    tz = models.CharField(max_length=-1, blank=True, null=True)
+    user = models.ForeignKey('ResUsers', models.DO_NOTHING, blank=True, null=True)
+    vat = models.CharField(max_length=-1, blank=True, null=True)
+    website = models.CharField(max_length=-1, blank=True, null=True)
+    comment = models.TextField(blank=True, null=True)
+    credit_limit = models.FloatField(blank=True, null=True)
+    barcode = models.CharField(max_length=-1, blank=True, null=True)
+    active = models.BooleanField(blank=True, null=True)
+    customer = models.BooleanField(blank=True, null=True)
+    supplier = models.BooleanField(blank=True, null=True)
+    employee = models.BooleanField(blank=True, null=True)
+    function = models.CharField(max_length=-1, blank=True, null=True)
+    type = models.CharField(max_length=-1, blank=True, null=True)
+    street = models.CharField(max_length=-1, blank=True, null=True)
+    street2 = models.CharField(max_length=-1, blank=True, null=True)
+    zip = models.CharField(max_length=-1, blank=True, null=True)
+    city = models.CharField(max_length=-1, blank=True, null=True)
+    state = models.ForeignKey(ResCountryState, models.DO_NOTHING, blank=True, null=True)
+    country = models.ForeignKey(ResCountry, models.DO_NOTHING, blank=True, null=True)
+    email = models.CharField(max_length=-1, blank=True, null=True)
+    phone = models.CharField(max_length=-1, blank=True, null=True)
+    mobile = models.CharField(max_length=-1, blank=True, null=True)
+    is_company = models.BooleanField(blank=True, null=True)
+    industry = models.ForeignKey('ResPartnerIndustry', models.DO_NOTHING, blank=True, null=True)
+    color = models.IntegerField(blank=True, null=True)
+    partner_share = models.BooleanField(blank=True, null=True)
+    commercial_partner = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    commercial_company_name = models.CharField(max_length=-1, blank=True, null=True)
+    company_name = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_partner'
+
+
+class ResPartnerBank(models.Model):
+    acc_number = models.CharField(max_length=-1)
+    sanitized_acc_number = models.CharField(max_length=-1, blank=True, null=True)
+    acc_holder_name = models.CharField(max_length=-1, blank=True, null=True)
+    partner = models.ForeignKey(ResPartner, models.DO_NOTHING)
+    bank = models.ForeignKey(ResBank, models.DO_NOTHING, blank=True, null=True)
+    sequence = models.IntegerField(blank=True, null=True)
+    currency = models.ForeignKey(ResCurrency, models.DO_NOTHING, blank=True, null=True)
+    company = models.ForeignKey(ResCompany, models.DO_NOTHING, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_partner_bank'
+        unique_together = (('sanitized_acc_number', 'company'),)
+
+
+class ResPartnerCategory(models.Model):
+    parent_path = models.CharField(max_length=-1, blank=True, null=True)
+    name = models.CharField(max_length=-1)
+    color = models.IntegerField(blank=True, null=True)
+    parent = models.ForeignKey('self', models.DO_NOTHING, blank=True, null=True)
+    active = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_partner_category'
+
+
+class ResPartnerIndustry(models.Model):
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    full_name = models.CharField(max_length=-1, blank=True, null=True)
+    active = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_partner_industry'
+
+
+class ResPartnerResPartnerCategoryRel(models.Model):
+    category = models.ForeignKey(ResPartnerCategory, models.DO_NOTHING)
+    partner = models.ForeignKey(ResPartner, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'res_partner_res_partner_category_rel'
+        unique_together = (('category', 'partner'),)
+
+
+class ResPartnerTitle(models.Model):
+    name = models.CharField(max_length=-1)
+    shortcut = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey('ResUsers', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_partner_title'
+
+
+class ResUsers(models.Model):
+    active = models.BooleanField(blank=True, null=True)
+    login = models.CharField(unique=True, max_length=-1)
+    password = models.CharField(max_length=-1, blank=True, null=True)
+    company = models.ForeignKey(ResCompany, models.DO_NOTHING)
+    partner = models.ForeignKey(ResPartner, models.DO_NOTHING)
+    create_date = models.DateTimeField(blank=True, null=True)
+    signature = models.TextField(blank=True, null=True)
+    action_id = models.IntegerField(blank=True, null=True)
+    share = models.BooleanField(blank=True, null=True)
+    create_uid = models.ForeignKey('self', models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    write_uid = models.ForeignKey('self', models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_users'
+
+
+class ResUsersLog(models.Model):
+    create_uid = models.ForeignKey(ResUsers, models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey(ResUsers, models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'res_users_log'
+
+
+class RuleGroupRel(models.Model):
+    rule_group = models.ForeignKey(IrRule, models.DO_NOTHING)
+    group = models.ForeignKey(ResGroups, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'rule_group_rel'
+        unique_together = (('rule_group', 'group'),)
+
+
+class WebEditorConverterTest(models.Model):
+    char = models.CharField(max_length=-1, blank=True, null=True)
+    integer = models.IntegerField(blank=True, null=True)
+    float = models.FloatField(blank=True, null=True)
+    numeric = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    many2one = models.ForeignKey('WebEditorConverterTestSub', models.DO_NOTHING, db_column='many2one', blank=True, null=True)
+    binary = models.BinaryField(blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
+    datetime = models.DateTimeField(blank=True, null=True)
+    selection = models.IntegerField(blank=True, null=True)
+    selection_str = models.CharField(max_length=-1, blank=True, null=True)
+    html = models.TextField(blank=True, null=True)
+    text = models.TextField(blank=True, null=True)
+    create_uid = models.ForeignKey(ResUsers, models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey(ResUsers, models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'web_editor_converter_test'
+
+
+class WebEditorConverterTestSub(models.Model):
+    name = models.CharField(max_length=-1, blank=True, null=True)
+    create_uid = models.ForeignKey(ResUsers, models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey(ResUsers, models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'web_editor_converter_test_sub'
+
+
+class WebTourTour(models.Model):
+    name = models.CharField(max_length=-1)
+    user = models.ForeignKey(ResUsers, models.DO_NOTHING, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'web_tour_tour'
+
+
+class WizardIrModelMenuCreate(models.Model):
+    menu = models.ForeignKey(IrUiMenu, models.DO_NOTHING)
+    name = models.CharField(max_length=-1)
+    create_uid = models.ForeignKey(ResUsers, models.DO_NOTHING, db_column='create_uid', blank=True, null=True)
+    create_date = models.DateTimeField(blank=True, null=True)
+    write_uid = models.ForeignKey(ResUsers, models.DO_NOTHING, db_column='write_uid', blank=True, null=True)
+    write_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'wizard_ir_model_menu_create'

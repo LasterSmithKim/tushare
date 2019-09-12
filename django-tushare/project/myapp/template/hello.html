@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" />
+
+</head>
+<body>
+    <div style="height: 320px; width: 1020px;" id="graphdiv"></div>
+    <a href="market/">market</a>
+    <a href="area/">area</a>
+    <a href="industry/">industry</a>
+    <script type="text/javascript">
+        g = new Dygraph(
+        document.getElementById("graphdiv"),
+        {{date | safe}}
+                ,
+        {
+        labels: ["DATE", "value1"],
+        animatedZooms: true
+        }
+        );
+    </script>
+</body>
+</html>
